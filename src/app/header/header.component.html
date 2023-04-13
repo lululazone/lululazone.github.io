@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<style>
+  .center{
+    margin: 0;
+    width: 100%;
+    padding-left: 50px;
+    padding-bottom: 150px;
+    background-color: #7BDFF2;
+    display: flex; /* Utiliser Flexbox pour aligner les liens horizontalement */
+    justify-content: space-between; /* Espacer les liens avec un espace égal entre eux */
+    flex-wrap: wrap; /* Permettre aux liens de se mettre à la ligne si nécessaire */
+
+  }
+</style>
+<div class="center">
+  <div>
+    <div class="dock-windows dock-advanced">
+      <p-dock [model]="items" [position]="position"  >
+      <ng-template pTemplate="item" let-item >
+        <img [src]="item.icon" [alt]="item.label" width="80%" height="100%" />
+      </ng-template>
+      </p-dock>
+    </div>
+  </div>
+</div>
+
