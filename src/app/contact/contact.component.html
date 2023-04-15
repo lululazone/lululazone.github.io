@@ -1,1 +1,104 @@
-<p>contact works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Me Contacter</title>
+
+  <!-- Importation des styles de Taiga UI -->
+
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      text-align: center;
+      width: 500px;
+      min-width: 200px;
+      height: 100%;
+      padding: 100px;
+      border: 5px solid #ccc;
+      border-radius: 10px;
+      border-color: #613DC1;
+    }
+
+    tui-input,tui-text-area {
+      margin: 5%;
+
+    }
+
+    tui-text-area{
+      height: 200px;
+
+    }
+
+
+
+
+
+    .social-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-buttons a {
+      margin-right: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div>
+  <h1 style="text-align: center; font-family: 'Arial'">Me contacter</h1>
+<div>
+<!-- Formulaire de contact -->
+<form (submit)="envoyerEmail()" class="form-container">
+  <label for="nom">Nom :</label>
+  <tui-input type="text" id="nom" [(ngModel)]="nom" name="nom" required></tui-input>
+
+  <label for="email">Email :</label>
+  <tui-input type="email" id="email" [(ngModel)]="email" name="email" required></tui-input>
+
+  <label for="message">Message :</label>
+  <tui-text-area id="message" [(ngModel)]="message" name="message" required></tui-text-area>
+
+  <button type="submit" tuiButton>Envoyer</button>
+  <div *ngIf="((email=='' || message=='' ||nom=='') && alreadyClicked == true) ">
+    <label style="color: red">Champs incomplets</label>
+  </div>
+</form>
+</div>
+
+<!-- Boutons pour les réseaux sociaux -->
+<div class="social-buttons">
+  <a href="https://www.linkedin.com/in/%F0%9F%90%BBlucas-girard-6bb4261b4/" target="_blank" rel="noopener noreferrer">
+    <button tuiButton variant="primary" appearance="flat">
+      <i class="tui-icon tui-icon-linkedin"></i>
+      <img src="assets/images/linkedin.png" width="90%" height="50%">
+    </button>
+  </a>
+
+  <a href="https://github.com/lululazone" target="_blank" rel="noopener noreferrer">
+    <button tuiButton variant="secondary" appearance="flat">
+      <i class="tui-icon tui-icon-github"></i>
+      <img src="assets/images/github.png" width="90%" height="50%">
+    </button>
+  </a>
+</div>
+</div>
+<!-- Scripts pour Angular et Taiga UI -->
+<script src="https://cdn.jsdelivr.net/npm/taiga-ui@3.4.0/lib/bundles/taiga-ui-core.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/taiga-ui/addons/markdown/bundles/taiga-ui-addon-markdown.umd.min.js"></script>
+
+</body>
+
+</html>

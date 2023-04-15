@@ -1,3 +1,6 @@
+import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
+import {TuiRootModule, TuiDialogModule, TuiAlertModule, TUI_SANITIZER, TuiButtonModule} from "@taiga-ui/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { ProjetsComponent } from './projets/projets.component';
 import { ContactComponent } from './contact/contact.component';
+import { MainComponent } from './main/main.component';
+import {ButtonModule} from "primeng/button";
+import {FormsModule} from "@angular/forms";
+import {TuiInputModule, TuiProgressModule, TuiTextAreaModule} from "@taiga-ui/kit";
 
 @NgModule({
   declarations: [
@@ -16,15 +23,26 @@ import { ContactComponent } from './contact/contact.component';
     HeaderComponent,
     AboutComponent,
     ProjetsComponent,
-    ContactComponent
+    ContactComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
     DockModule,
     ImageModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonModule,
+    BrowserAnimationsModule,
+    TuiRootModule,
+    TuiDialogModule,
+    TuiAlertModule,
+    TuiButtonModule,
+    FormsModule,
+    TuiInputModule,
+    TuiTextAreaModule,
+    TuiProgressModule
   ],
-  providers: [],
+  providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

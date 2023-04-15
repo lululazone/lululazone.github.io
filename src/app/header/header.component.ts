@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
 
   position: string = 'top';
 
+
   constructor(private router: Router) {
   }
 
@@ -22,7 +23,7 @@ export class HeaderComponent implements OnInit {
         label: 'Home',
         icon: 'assets/images/home.png',
         command: () => {
-          this.router.navigateByUrl(`/home`);
+          this.router.navigateByUrl(``);
         }
       },
       {

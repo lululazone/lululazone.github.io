@@ -1,1 +1,99 @@
-<p>about works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>À propos de moi</title>
+
+  <!-- Importation des styles de Taiga UI -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/taiga-ui@3.4.0/lib/styles/core.umd.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/taiga-ui/addons/markdown/styles/taiga-ui-addon-markdown.umd.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/taiga-ui-icons@3.4.0/fonts/taiga-ui-icons.woff2">
+
+  <!-- Styles CSS personnalisés -->
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem;
+
+    }
+
+    .summary {
+      margin-bottom: 2rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: initial;
+    }
+
+    .skills .skill {
+      flex-basis: 50%;
+      padding: 0.5rem;
+    }
+
+    li {
+      font-size: large;
+    }
+  </style>
+
+</head>
+
+<body>
+<div class="container">
+  <h1>À propos de moi</h1>
+  <div class="summary">
+    <p>Je suis un développeur passionné avec une expérience dans le développement web. J'aime créer des applications
+      interactives et innovantes en utilisant les dernières technologies.</p>
+    <p>J'ai travaillé sur divers projets allant de sites web d'entreprise à des applications web complexes. Je suis
+      compétent dans les langages de programmation tels que HTML, CSS, JavaScript, et j'ai une connaissance approfondie
+      des frameworks populaires tels que Angular et React.</p>
+  </div>
+  <h2>Compétences</h2>
+  <div class="skills">
+    <div class="skill">
+      <h3>Front-end</h3>
+      <ul>
+        <li>HTML
+          <progress
+            tuiProgressBar
+            max="100"
+            size="m"
+            color="linear-gradient(to right, var(--tui-support-02), var(--tui-support-14), var(--tui-support-12))"
+            class="progress"
+            [value]="fastValue$ | async"
+          ></progress>
+        </li>
+
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Angular</li>
+        <li>React</li>
+      </ul>
+      <h3>Back-end</h3>
+      <ul>
+        <li>Node.js</li>
+        <li>Express</li>
+        <li>Java</li>
+        <li>Python</li>
+      </ul>
+      <h3>Outils</h3>
+      <ul>
+        <li>Git</li>
+        <li>VSCode</li>
+        <li>Postman</li>
+      </ul>
+      <h3>Bases de données</h3>
+      <ul>
+        <li>MySQL</li>
+        <li>MongoDB</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+</body>
+<!-- Scripts pour Angular et Taiga UI -->
+
+
